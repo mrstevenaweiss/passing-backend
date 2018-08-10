@@ -1,0 +1,14 @@
+Started GET "/" for ::1 at 2018-08-10 10:30:55 -0400
+Started GET "/" for ::1 at 2018-08-10 10:30:55 -0400
+Processing by ApplicationController#hello as HTML
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendering html template
+  Rendered html template (0.1ms)
+  Rendered html template (0.1ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 67ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
