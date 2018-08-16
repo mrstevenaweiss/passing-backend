@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#hello'
+  namespace :v1 do
+    resources :users, :posts
+  end
 end
