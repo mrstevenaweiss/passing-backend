@@ -2647,3 +2647,1178 @@ Processing by Api::V1::UsersController#index as HTML
 Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.7ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5149763047899502725)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (14.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5149763047899502725)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Sammy"], ["last_name", "Akharaz"], ["email", "sammy@sammy.com"], ["password_digest", "$2a$10$wM4ygFCoz/iQEygZDsZcM.Ktz/IrCDFmNBr8IW1Bd70MZRHVHIb1q"], ["created_at", "2018-08-20 15:22:41.497359"], ["updated_at", "2018-08-20 15:22:41.497359"]]
+  [1m[35m (30.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/api/v1/users" for ::1 at 2018-08-20 11:23:19 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mrweiss/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Roniece", "email"=>"ron@ron.com", "password"=>"[FILTERED]", "last_name"=>"Ricardo", "user"=>{"first_name"=>"Roniece", "last_name"=>"Ricardo", "email"=>"ron@ron.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 201 Created in 35ms (Views: 0.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/api/v1/posts" for ::1 at 2018-08-20 11:23:24 -0400
+Processing by Api::V1::PostsController#index as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:6
+Completed 200 OK in 67ms (Views: 38.2ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-08-20 11:23:27 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-08-20 11:23:30 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-08-20 11:23:40 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 11:23:46 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Roniece", "email"=>"ron@ron.com", "password"=>"[FILTERED]", "last_name"=>"Ricardo", "user"=>{"first_name"=>"Roniece", "last_name"=>"Ricardo", "email"=>"ron@ron.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 201 Created in 5ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-08-20 11:23:50 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Roniece"], ["last_name", "Ricardo"], ["email", "ron@ron.com"], ["password_digest", "$2a$10$m/aJeEEKFSG0fWd7LF6x4.Dvzwm3aFPbPVzbx0gD87p08f5OhLKLW"], ["created_at", "2018-08-20 15:25:02.298399"], ["updated_at", "2018-08-20 15:25:02.298399"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/v1/users" for ::1 at 2018-08-20 11:25:10 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 11:50:17 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss", "user"=>{"first_name"=>"Noah", "last_name"=>"Weiss", "email"=>"noah@noah.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 201 Created in 20ms (Views: 5.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:02:52 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss", "user"=>{"first_name"=>"Noah", "last_name"=>"Weiss", "email"=>"noah@noah.com"}}
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Completed 201 Created in 883288ms (Views: 1.2ms | ActiveRecord: 21.8ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:20:27 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mrweiss/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss", "user"=>{"first_name"=>"Noah", "last_name"=>"Weiss", "email"=>"noah@noah.com"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 19.3ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::UsersController:0x007fa8d85870e0>
+Did you mean?  @user):
+  
+app/controllers/api/v1/users_controller.rb:11:in `create'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:20:58 -0400
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:21:09 -0400
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:21:09 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss", "user"=>{"first_name"=>"Noah", "last_name"=>"Weiss", "email"=>"noah@noah.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 14.2ms)
+
+
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss", "user"=>{"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss"}}
+Processing by Api::V1::UsersController#create as */*
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  Parameters: {"first_name"=>"Noah", "email"=>"noah@noah.com", "password"=>"[FILTERED]", "last_name"=>"Weiss", "user"=>{"first_name"=>"Noah", "last_name"=>"Weiss", "email"=>"noah@noah.com"}}
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Noah"], ["last_name", "Weiss"], ["email", "noah@noah.com"], ["password_digest", "$2a$10$d.nDrzuUCQ2YWvJMjy81u.eOESUkNSr1vlxg4Y3J23NN4ypIyLDVu"], ["created_at", "2018-08-20 16:21:09.377301"], ["updated_at", "2018-08-20 16:21:09.377301"]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 96.8ms)
+
+
+  [1m[35m (64.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 201 Created in 166ms (Views: 0.6ms | ActiveRecord: 67.8ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:21:44 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Patrick", "email"=>"patrick@patrick.com", "password"=>"[FILTERED]", "last_name"=>"Abejar", "user"=>{"first_name"=>"Patrick", "last_name"=>"Abejar", "email"=>"patrick@patrick.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:21:56 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Patrick", "email"=>"patrick@patrick.com", "password"=>"[FILTERED]", "last_name"=>"Abejar", "user"=>{"first_name"=>"Patrick", "last_name"=>"Abejar", "email"=>"patrick@patrick.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:21:59 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Patrick", "email"=>"patrick@patrick.com", "password"=>"[FILTERED]", "last_name"=>"Abejar", "user"=>{"first_name"=>"Patrick", "last_name"=>"Abejar", "email"=>"patrick@patrick.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:22:00 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Patrick", "email"=>"patrick@patrick.com", "password"=>"[FILTERED]", "last_name"=>"Abejar", "user"=>{"first_name"=>"Patrick", "last_name"=>"Abejar", "email"=>"patrick@patrick.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:22:31 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Patrick", "email"=>"patrick@patrick.com", "password"=>"[FILTERED]", "last_name"=>"Abejar", "user"=>{"first_name"=>"Patrick", "last_name"=>"Abejar", "email"=>"patrick@patrick.com"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 12:22:31 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Patrick", "email"=>"patrick@patrick.com", "password"=>"[FILTERED]", "last_name"=>"Abejar", "user"=>{"first_name"=>"Patrick", "last_name"=>"Abejar", "email"=>"patrick@patrick.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-08-20 13:15:55 -0400
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2018-08-20 13:15:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:26:25 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:27:32 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:27:32 -0400
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.6ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 24ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:32:19 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:32:19 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 7ms (Views: 0.3ms | ActiveRecord: 3.4ms)
+
+
+  [1m[35m (3.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:40:02 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:40:02 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 15.1ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 9ms (Views: 0.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:40:42 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:40:42 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+Completed 200 OK in 154032ms (Views: 0.4ms | ActiveRecord: 22.2ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 10ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:43:48 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:43:48 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 9.2ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:46:07 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:46:07 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 16.3ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 12ms (Views: 0.1ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:47:19 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:47:19 -0400
+Processing by Api::V1::UsersController#create as */*
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:50:19 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:50:19 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 11.1ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:18
+Completed 401 Unauthorized in 8ms (Views: 0.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:53:09 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:53:09 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 7.1ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_user' for #<Api::V1::AuthController:0x007fa8d85b9090>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:54:01 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:54:01 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 8.2ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_request' for #<Api::V1::AuthController:0x007fa8d842cd58>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:54:12 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:54:12 -0400
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_request' for #<Api::V1::AuthController:0x007fa8d92de2c0>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 20ms (Views: 0.3ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/api/v1/users" for ::1 at 2018-08-20 13:58:21 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 13:58:21 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 5.6ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 0..1)):
+  
+app/controllers/api/v1/users_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_request' for #<Api::V1::AuthController:0x007fa8dc85cc30>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:07:27 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:07:27 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 15.2ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_request' for #<Api::V1::AuthController:0x007fa8d7dbf0d8>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:07:48 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:07:48 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 9.4ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_user' for #<Api::V1::AuthController:0x007fa8d82ab628>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:10:33 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:10:33 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 10.3ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_user' for #<Api::V1::AuthController:0x007fa8d8a0e078>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:11:00 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:11:00 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 9.1ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_user' for #<Api::V1::AuthController:0x007fa8d8939da0>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:11:15 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:11:15 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"first_name"=>"Zoe", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]", "last_name"=>"F", "user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com"}}
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Completed 200 OK in 558486ms (Views: 0.4ms | ActiveRecord: 17.0ms)
+
+
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_user' for #<Api::V1::AuthController:0x007fa8dc8791f0>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:21:00 -0400
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Zoe", "last_name"=>"F", "email"=>"zoe@zoe.com", "password"=>"[FILTERED]"}}
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:21:38 -0400
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Processing by Api::V1::AuthController#login as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Create (64.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "Zoe"], ["last_name", "F"], ["email", "zoe@zoe.com"], ["password_digest", "$2a$10$ds7ie2N6WetzSc.LxD3ZD.gWtSNqAgc528rn3PI7f1w537Ca9oLEW"], ["created_at", "2018-08-20 18:21:38.533721"], ["updated_at", "2018-08-20 18:21:38.533721"]]
+  
+  ↳ app/controllers/api/v1/users_controller.rb:11
+NoMethodError (undefined method `set_user' for #<Api::V1::AuthController:0x007fa8d92bae38>
+Did you mean?  set_request!):
+  
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (92.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Completed 201 Created in 38133ms (Views: 0.2ms | ActiveRecord: 158.1ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/v1/users" for ::1 at 2018-08-20 14:23:54 -0400
+Started POST "/api/v1/auth" for ::1 at 2018-08-20 14:23:54 -0400
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mrweiss/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (16.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mrweiss/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
